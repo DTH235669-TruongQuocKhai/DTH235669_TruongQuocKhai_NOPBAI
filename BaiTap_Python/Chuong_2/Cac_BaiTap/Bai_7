@@ -1,0 +1,41 @@
+Một số cách nhập dữ liệu từ bàn phím
+1. Nhập chuỗi (string)
+Mặc định, input() luôn trả về chuỗi.
+name = input("Nhập tên của bạn: ")
+print("Xin chào,", name)
+
+2. Nhập số nguyên (int)
+Cần ép kiểu từ chuỗi sang số nguyên bằng int().
+age = int(input("Nhập tuổi: "))
+print("Tuổi của bạn là:", age)
+
+3. Nhập số thực (float)
+Dùng float() để ép kiểu.
+height = float(input("Nhập chiều cao (m): "))
+print("Chiều cao của bạn:", height, "m")
+
+4. Nhập nhiều giá trị trên một dòng
+Dùng split() để tách chuỗi theo khoảng trắng, rồi ép kiểu nếu cần.
+a, b = input("Nhập 2 số cách nhau bởi khoảng trắng: ").split()
+print("a =", a, ", b =", b)
+Nếu muốn chuyển sang số nguyên:
+a, b = map(int, input("Nhập 2 số nguyên: ").split())
+print("Tổng =", a + b)
+
+5. Nhập danh sách nhiều phần tử
+Dùng split() kết hợp map().
+lst = list(map(int, input("Nhập các số nguyên cách nhau bởi khoảng trắng: ").split()))
+print("Danh sách:", lst)
+
+6. Nhập ký tự
+Python không có hàm riêng cho ký tự, nhưng có thể lấy phần tử đầu tiên của chuỗi nhập vào.
+ch = input("Nhập một ký tự: ")[0]
+print("Ký tự vừa nhập:", ch)
+
+Tóm lại, một số cách nhập dữ liệu từ bàn phím:
+input() → nhập chuỗi.
+int(input()) → nhập số nguyên.
+float(input()) → nhập số thực.
+input().split() → nhập nhiều giá trị.
+map() + split() → nhập và ép kiểu nhiều giá trị.
+input()[0] → nhập ký tự.

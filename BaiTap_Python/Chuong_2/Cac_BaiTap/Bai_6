@@ -1,0 +1,47 @@
+Các ý nghĩa của toán tử /, //, %, **, and, or, is.
+1. Toán tử số học
+a) Chia thường (Floating-point division)
+Luôn trả về kết quả số thực (float), kể cả khi chia hết.
+print(7 / 2)   # 3.5
+print(8 / 2)   # 4.0
+
+b) Chia lấy phần nguyên (Floor division)
+Trả về phần nguyên sau phép chia, bỏ phần thập phân (làm tròn xuống nếu số âm).
+print(7 // 2)   # 3
+print(-7 // 2)  # -4  (làm tròn xuống)
+
+c) Chia lấy dư (Modulo)
+Trả về phần dư của phép chia.
+Dấu của kết quả cùng dấu với số chia.
+print(7 % 2)    # 1
+print(-7 % 2)   # 1
+print(7 % -2)   # -1
+
+d) Lũy thừa (Exponentiation)
+Dùng để tính số mũ.
+print(2 ** 3)   # 8 (2 mũ 3)
+print(9 ** 0.5) # 3.0 (căn bậc hai của 9)
+
+2. Toán tử logic
+a) and → Và logic
+Trả về True nếu cả hai vế đều đúng, ngược lại trả về False.
+print(True and True)   # True
+print(True and False)  # False
+print(5 > 2 and 3 > 1) # True
+
+b) or → Hoặc logic
+Trả về True nếu ít nhất một vế đúng.
+print(True or False)   # True
+print(False or False)  # False
+print(5 < 2 or 3 > 1)  # True
+
+3. Toán tử so sánh danh tính
+is → So sánh cùng đối tượng (Identity)
+Kiểm tra hai biến có tham chiếu đến cùng một đối tượng trong bộ nhớ hay không.
+Khác với == (so sánh giá trị).
+a = [1, 2, 3]
+b = a
+c = [1, 2, 3]
+print(a == c)   # True  (giá trị giống nhau)
+print(a is c)   # False (không cùng đối tượng trong bộ nhớ)
+print(a is b)   # True  (cùng tham chiếu đến 1 list)

@@ -3,8 +3,9 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/BaiTap_Python/Chuong_2/Cac_BaiTap/.venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.13 (Chuong_1)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.13 virtualenv at C:\Users\ASUS\PycharmProjects\Python\.venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

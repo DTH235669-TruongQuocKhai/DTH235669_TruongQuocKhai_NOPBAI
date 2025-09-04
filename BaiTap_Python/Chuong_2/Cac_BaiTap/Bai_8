@@ -1,0 +1,66 @@
+Các loại lỗi khi lập trình và cách bắt lỗi trong Python.
+1. Lỗi cú pháp
+SyntaxErrorlà một lỗi thường gặp khi trình thông dịch Python phân tích cú pháp mã của bạn và phát hiện mã không chính xác, không tuân thủ các quy tắc cú pháp.
+Một số nguyên nhân phổ biến SyntaxErrorbao gồm:
+-Chuỗi không đóng
+-Các vấn đề thụt lề
+-Sử dụng sai toán tử gán ( =)
+-Từ khóa Python viết sai chính tả
+-Thiếu dấu ngoặc vuông, dấu ngoặc đơn hoặc dấu ngoặc nhọn
+-Sử dụng cú pháp Python mới hơn trên phiên bản Python cũ.
+Khi lỗi này xảy ra, một lệnh theo dõi sẽ được tạo ra để giúp bạn xác định vị trí sự cố. Hãy xem ví dụ sau:
+
+employees = {"pam" 30,
+             "jim": 28}
+for name, age in employees.items():
+    print(f"{name.capitalize()} is {age} years old.")
+
+Ở dòng 1, cú pháp không hợp lệ vì thuộc tính đầu tiên của từ điển thiếu dấu hai chấm ( :) để phân tách thuộc tính "pam"và giá trị 30.
+Khi mã được thực thi, lệnh traceback sau được tạo ra:
+
+File "/home/stanley/code_samples/main.py", line 1
+    employees = {"pam" 30,
+                 ^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+Thông báo theo dõi có nhiều dấu mũ ( ^) cho biết vị trí phát hiện cú pháp không hợp lệ.
+Mặc dù đôi khi thông báo có thể không xác định chính xác vị trí, nhưng thường sẽ gợi ý vị trí có thể xảy ra sự cố.
+Để giải quyết vấn đề này, hãy cân nhắc kỹ lưỡng những thông tin sau trong quá trình theo dõi:
+Tên tập tin
+Số dòng
+Vị trí được chỉ ra bởi dấu mũ (^)
+Thông báo lỗi có thể cung cấp thông tin chi tiết về bản chất của vấn đề.
+Câu hỏi được thêm vào cuối thông báo lỗi cung cấp bối cảnh có giá trị.
+
+2. Lỗi thụt lề
+Lỗi này IndentationErrorxảy ra trong Python khi mã của bạn có vấn đề thụt lề.
+Các nguyên nhân thường gặp bao gồm nhầm lẫn tab với khoảng trắng, khoảng cách không chính xác, các khối lồng nhau không đúng cách hoặc khoảng trắng ở đầu câu lệnh hoặc tệp.
+Hãy xem xét ví dụ sau:
+if True:
+print("Incorrectly indented")
+
+Điều này kích hoạt lệnh theo dõi Python tương tự như:
+  File "/home/stanley/code_samples/main.py", line 2
+    print("Missing colon")
+    ^
+IndentationError: expected an indented block after 'if' statement on line 1
+Để giải quyết và ngăn ngừa vấn đề này
+Hãy sử dụng trình soạn thảo hoặc IDE được cấu hình với các trình định dạng như Black  , giúp tự động định dạng mã khi bạn viết.
+
+3. Lỗi tên
+Python sẽ gây ra lỗi a NameErrornếu bạn cố gắng sử dụng một định danh chưa được định nghĩa hoặc có thể nằm ngoài phạm vi.
+Các nguyên nhân tiềm ẩn khác NameErrorbao gồm việc tham chiếu đến một biến trước khi gán hoặc nhập sai định danh:
+
+print(name)
+
+Trong ví dụ này, name biến chưa được định nghĩa nhưng đang được truy cập.
+Do đó, Python ném ra một ngoại lệ:
+
+Traceback (most recent call last):
+  File "/home/stanley/code_samples/main.py", line 1, in <module>
+    print(name)
+NameError: name 'name' is not defined
+
+Để khắc phục sự cố này, hãy đảm bảo tên biến hoặc hàm bạn muốn sử dụng đã được định nghĩa.
+Kiểm tra lỗi chính tả và đảm bảo biến bạn muốn sử dụng nằm trong phạm vi được truy cập.
+
